@@ -1,0 +1,28 @@
+---
+title: "Rider Webpage"
+author: "Cristina Rider"
+date: "3/29/2021"
+output: html_document
+---
+
+## Instructions
+
+
+## Packages
+```{r}
+library(knitr)
+library(leaflet)
+library(dplyr)
+```
+
+
+```{r}
+norfolk <- data.frame(lat = runif(25, min = 36.8, max = 36.9),
+                      lng = runif(25, min = -76.2, max = -76.1))
+
+norfolk %>%
+     leaflet() %>%
+     addTiles() %>%
+     addMarkers(clusterOptions = markerClusterOptions())
+
+```
